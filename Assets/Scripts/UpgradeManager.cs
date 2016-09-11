@@ -5,6 +5,7 @@ using System.Collections;
 public class UpgradeManager : MonoBehaviour {
 
     public UnityEngine.UI.Text itemInfo;
+    public UnityEngine.UI.Text nameAndLevel;
     public Button miner;
     public Button button;
     public int i;
@@ -20,7 +21,9 @@ public class UpgradeManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Data.gold < m.cost)
+
+        nameAndLevel.text = m.minerName + " Level: " + m.count;
+        if (Data.gold < m.cost)
         {
             miner.interactable = false;
             button.interactable = false;
@@ -31,10 +34,10 @@ public class UpgradeManager : MonoBehaviour {
         }
         if (m.goldPerSec > 0)
         {
-            itemInfo.text = m.minerName + "\nCost: " + Data.CurrencyToString(m.cost) + "\nPower: +" + Data.CurrencyToString(m.clickPower) +" GPS: +"+ Data.CurrencyToString(m.goldPerSec)+"/s"+ " Level: " + m.count;
+            itemInfo.text = "Cost: " + Data.CurrencyToString(m.cost) + "\nPower: +" + Data.CurrencyToString(m.clickPower) +"\nGPS: +"+ Data.CurrencyToString(m.goldPerSec)+"/s";
         } else
         {
-            itemInfo.text = m.minerName + "\nCost: " + Data.CurrencyToString(m.cost) + "\nPower: +" + Data.CurrencyToString(m.clickPower) + " Level: " + m.count;
+            itemInfo.text = "Cost: " + Data.CurrencyToString(m.cost) + "\nPower: +" + Data.CurrencyToString(m.clickPower);
         }
 	}
 

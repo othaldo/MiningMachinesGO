@@ -11,7 +11,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: ZockerDudes
-  productName: Clicker
+  productName: Mining Machines GO
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenStyle: 0
@@ -93,7 +93,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: de.ZockerDudes.Clicker
+  bundleIdentifier: de.ZockerDudes.MiningMachinesGO
   bundleVersion: 0.1
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
