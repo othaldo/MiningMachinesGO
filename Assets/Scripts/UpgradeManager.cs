@@ -10,7 +10,7 @@ public class UpgradeManager : MonoBehaviour {
     public Button button;
     public int i;
     private Miner m;
-    Data data = new Data();
+    //Data data = new Data();
 
 	// Use this for initialization
 	void Start () {
@@ -54,6 +54,8 @@ public class UpgradeManager : MonoBehaviour {
             //Data.goldPerSec += m.goldPerSec;
 
         }
-        data.UpdateGold();
+        //Debug.Log("Füge Gold hinzu!" + Data.goldPerSec);
+        Data.UpdateGold();
+        //Debug.Log("Füge Gold hinzu!" + Data.goldPerSec);
     }
 }

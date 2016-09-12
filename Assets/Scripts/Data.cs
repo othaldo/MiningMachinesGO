@@ -14,8 +14,8 @@ public class Data : MonoBehaviour {
     public static List<Miner> minerList = new List<Miner>
     {
         new Miner(0,"Miner MK I", 10, 1,1,1.2f,1.15f),
-        new Miner(1,"Miner MK II", 100, 15000,15000,1.25f,1.3f),
-        new Miner(2,"Miner MK III", 1000,200000,200000,1.5f,1.5f)
+        new Miner(1,"Miner MK II", 10, 1,1,1.2f,1.15f),
+        new Miner(2,"Miner MK III", 10, 1,1,1.2f,1.15f),
     };
 
     // Use this for initialization
@@ -24,7 +24,7 @@ public class Data : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	public void UpdateGold () {
+	public static void UpdateGold () {
         Data.goldPerClick = 1;
         Data.goldPerSec = 0;
         for (int i = 0; i < Data.minerList.Count; i++)

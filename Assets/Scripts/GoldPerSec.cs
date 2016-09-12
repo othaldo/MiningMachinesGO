@@ -3,17 +3,13 @@ using System.Collections;
 
 public class GoldPerSec : MonoBehaviour {
 
-    private static GoldPerSec instance = null;
-
     public void AutoGoldPerSec()
     {
-        Debug.Log("Füge Gold hinzu!"+ Data.goldPerSec / 10);
         Data.gold += Data.goldPerSec/10;
     }
 
     IEnumerator AutoTick()
     {
-        Debug.Log("AutoTick gestartet!");
         while (true)
         {
             AutoGoldPerSec();
@@ -22,21 +18,15 @@ public class GoldPerSec : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        DontDestroyOnLoad(gameObject);
         StartCoroutine(AutoTick());
 	}
 
     void Awake()
     {
-        if (instance != null && instance != this)
+        DontDestroyOnLoad(this);
+        if (FindObjectsOfType(GetType()).Length > 1)
         {
-            Destroy(this.gameObject);
-            return;
+            Destroy(gameObject);
         }
-        else
-        {
-            instance = this;
-        }
-        DontDestroyOnLoad(this.gameObject);
     }
 }
