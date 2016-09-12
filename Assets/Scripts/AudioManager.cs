@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AudioManager : MonoBehaviour {
 
-    private static AudioManager instance = null;
+    private static AudioManager instance;
     public AudioSource BGM;
 
     // Use this for initialization

@@ -90,6 +90,23 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &136568361 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011392637530, guid: 8b8bb0b2d5c7ca7429a03ca21bec1070,
+    type: 2}
+  m_PrefabInternal: {fileID: 186305042}
+--- !u!114 &136568362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 136568361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c35e22dfaad1c4a9919ca3a72198d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 367c4dda01ce8ca42b76ef8e983eb7dc, type: 3}
 --- !u!1001 &186305042
 Prefab:
   m_ObjectHideFlags: 0
@@ -394,6 +411,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b8bb0b2d5c7ca7429a03ca21bec1070, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &273450720 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011392637530, guid: 8b8bb0b2d5c7ca7429a03ca21bec1070,
+    type: 2}
+  m_PrefabInternal: {fileID: 273450719}
+--- !u!114 &273450721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 273450720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c35e22dfaad1c4a9919ca3a72198d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 367c4dda01ce8ca42b76ef8e983eb7dc, type: 3}
 --- !u!1 &400582351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,3 +1131,20 @@ Transform:
   - {fileID: 828347728}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &1755548187 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011392637530, guid: 8b8bb0b2d5c7ca7429a03ca21bec1070,
+    type: 2}
+  m_PrefabInternal: {fileID: 829142695}
+--- !u!114 &1755548188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1755548187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c35e22dfaad1c4a9919ca3a72198d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: 367c4dda01ce8ca42b76ef8e983eb7dc, type: 3}

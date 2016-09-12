@@ -15,7 +15,7 @@ public class ClickSound : MonoBehaviour {
         gameObject.AddComponent<AudioSource>();
         source.clip = sound;
         source.playOnAwake = false;
-
+        source.volume = 0.1f;
         button.onClick.AddListener(() => PlaySound()); 
 	}
 

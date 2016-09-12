@@ -10,7 +10,7 @@ public class UpgradeManager : MonoBehaviour {
     public Button button;
     public int i;
     private Miner m;
-
+    Data data = new Data();
 
 	// Use this for initialization
 	void Start () {
@@ -47,12 +47,13 @@ public class UpgradeManager : MonoBehaviour {
         {
             Data.gold -= m.cost;
             m.count++;
-            m.goldPerSec = Mathf.Round(m.baseGPS * Mathf.Pow(m.upgradeGPS, m.count));
-            m.clickPower = Mathf.Round(m.baseClickPower * Mathf.Pow(m.upgradeGPS, m.count));
+            m.goldPerSec = m.baseGPS * Mathf.Pow(m.upgradeGPS, m.count);
+            m.clickPower = m.baseClickPower * Mathf.Pow(m.upgradeGPS, m.count);
             m.cost = Mathf.Round(m.baseCost * Mathf.Pow(m.upgradecost, m.count));
             //Data.goldPerClick += m.clickPower;
             //Data.goldPerSec += m.goldPerSec;
 
         }
+        data.UpdateGold();
     }
 }

@@ -6,6 +6,7 @@ public class Click : MonoBehaviour {
 
     public UnityEngine.UI.Text goldDisplay;
     public Button button;
+    Data data = new Data();
 
     void Start()
     {
@@ -19,16 +20,7 @@ public class Click : MonoBehaviour {
 
         }
 
-        Data.goldPerClick = 1;
-        Data.goldPerSec = 0;
-        for (int i =0; i <Data.minerList.Count ; i++)
-        {
-            if (Data.minerList[i].count > 0)
-            {
-                Data.goldPerClick += Data.minerList[i].clickPower;
-                Data.goldPerSec += Data.minerList[i].goldPerSec;
-            }
-        }
+        data.UpdateGold();
 	}
 
     public void Clicked()

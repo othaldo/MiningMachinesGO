@@ -7,11 +7,13 @@ public class GoldPerSec : MonoBehaviour {
 
     public void AutoGoldPerSec()
     {
+        Debug.Log("Füge Gold hinzu!"+ Data.goldPerSec / 10);
         Data.gold += Data.goldPerSec/10;
     }
 
     IEnumerator AutoTick()
     {
+        Debug.Log("AutoTick gestartet!");
         while (true)
         {
             AutoGoldPerSec();

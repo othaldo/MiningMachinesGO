@@ -24,9 +24,18 @@ public class Data : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-	
-	}
+	public void UpdateGold () {
+        Data.goldPerClick = 1;
+        Data.goldPerSec = 0;
+        for (int i = 0; i < Data.minerList.Count; i++)
+        {
+            if (Data.minerList[i].count > 0)
+            {
+                Data.goldPerClick += Data.minerList[i].clickPower;
+                Data.goldPerSec += Data.minerList[i].goldPerSec;
+            }
+        }
+    }
 
     public static string CurrencyToString(float valueToConvert)
     {
