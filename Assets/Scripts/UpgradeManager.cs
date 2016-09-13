@@ -23,7 +23,7 @@ public class UpgradeManager : MonoBehaviour {
 	void Update () {
 
         nameAndLevel.text = m.minerName + " Level: " + m.count;
-        if (Data.gold < m.cost)
+        if (Data.instance.GetGold() < m.cost)
         {
             miner.interactable = false;
             button.interactable = false;
@@ -43,9 +43,9 @@ public class UpgradeManager : MonoBehaviour {
 
     public void PurchasedUpgrade()
     {
-        if(Data.gold >= m.cost)
+        if(Data.instance.GetGold() >= m.cost)
         {
-            Data.gold -= m.cost;
+            Data.instance.RemoveGold(m.cost);
             m.count++;
             m.goldPerSec = m.baseGPS * Mathf.Pow(m.upgradeGPS, m.count);
             m.clickPower = m.baseClickPower * Mathf.Pow(m.upgradeGPS, m.count);
@@ -55,7 +55,7 @@ public class UpgradeManager : MonoBehaviour {
 
         }
         //Debug.Log("Füge Gold hinzu!" + Data.goldPerSec);
-        Data.UpdateGold();
+        Data.instance.UpdateGold();
         //Debug.Log("Füge Gold hinzu!" + Data.goldPerSec);
     }
 }

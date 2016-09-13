@@ -4,12 +4,14 @@ using System.Collections.Generic;
 
 public class Data : MonoBehaviour {
 
-    public static float gold = 0F;
-    public static float goldPerClick = 1F;
-    public static float goldPerSec = 0F;
-    public static float delay = 0.1F;
+    public static Data instance;
 
-    private static string[] suffix = new string[] { "", "K", "M", "B", "q", "Q", "s", "S", "O", "N", "d", "D" };
+    private float gold = 0F;
+    private float goldPerClick = 1F;
+    private float goldPerSec = 0F;
+    private float delay = 0.1F;
+
+    private static string[] suffix = new string[] { "", "K", "M", "B", "T", "q", "Q", "s", "S", "O", "N", "d", "D" };
 
     public static List<Miner> minerList = new List<Miner>
     {
@@ -18,21 +20,43 @@ public class Data : MonoBehaviour {
         new Miner(2,"Miner MK III", 10000, 100,0,1.3f,1.35f),
     };
 
+
+    public static Data Instance
+    {
+        get { return instance; }
+    }
+    void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
     // Use this for initialization
     void Start () {
 
     }
 	
+    public void AddGold()
+    {
+        gold += goldPerClick;
+    }
 	// Update is called once per frame
-	public static void UpdateGold () {
-        Data.goldPerClick = 1;
-        Data.goldPerSec = 0;
+	public void UpdateGold () {
+        goldPerClick = 1;
+        goldPerSec = 0;
         for (int i = 0; i < Data.minerList.Count; i++)
         {
             if (Data.minerList[i].count > 0)
             {
-                Data.goldPerClick += Data.minerList[i].clickPower;
-                Data.goldPerSec += Data.minerList[i].goldPerSec;
+                goldPerClick += Data.minerList[i].clickPower;
+                goldPerSec += Data.minerList[i].goldPerSec;
             }
         }
     }
@@ -50,4 +74,32 @@ public class Data : MonoBehaviour {
         }
         return v.ToString("0.###") + suffix[scale];
     }
+
+    public float GetGold()
+    {
+        return gold;
+    }
+    public void AddGold(float amount)
+    {
+        gold += amount;
+    }
+    public void RemoveGold(float amount)
+    {
+        gold -= amount;
+    }
+    public string GetGoldString()
+    {
+        return CurrencyToString(gold);
+    }
+
+    public float GetDelay()
+    {
+        return delay;
+    }
+
+    public float GetGoldPerSec()
+    {
+        return goldPerSec;
+    }
+
 }

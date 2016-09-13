@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Miner : MonoBehaviour {
+public class Miner {
 
     public int id;
     public string minerName;

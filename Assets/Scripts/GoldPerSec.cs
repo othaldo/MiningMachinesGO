@@ -5,7 +5,7 @@ public class GoldPerSec : MonoBehaviour {
 
     public void AutoGoldPerSec()
     {
-        Data.gold += Data.goldPerSec/10;
+        Data.instance.AddGold(Data.instance.GetGoldPerSec() / 10);
     }
 
     IEnumerator AutoTick()

@@ -9,23 +9,23 @@ public class Click : MonoBehaviour {
 
     void Start()
     {
-        //Data.gold = PlayerPrefs.GetFloat("gold");
+
     }
 	// Update is called once per frame
 	void Update () {
-        goldDisplay.text = Data.CurrencyToString(Data.gold);
+        //goldDisplay.text = Data.CurrencyToString(Data.gold);
 	}
 
     public void Clicked()
     {
         button.interactable = false;
-        Data.gold += Data.goldPerClick;
+        Data.instance.AddGold();
         StartCoroutine(Reactivate());
     }
 
     IEnumerator Reactivate()
     {
-        yield return new WaitForSeconds(Data.delay);
+        yield return new WaitForSeconds(Data.instance.GetDelay());
         button.interactable = true;
     }
 }
