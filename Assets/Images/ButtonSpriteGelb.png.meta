@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 488ef0fb7b556d24ea1427a5016a2ac4
+timeCreated: 1473846082
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ButtonSpriteGelb_0
+    21300002: ButtonSpriteGelb_1
+    21300004: ButtonSpriteGelb_2
+    21300006: ButtonSpriteGelb_3
+    21300008: ButtonSpriteGelb_4
+    21300010: ButtonSpriteGelb_5
+    21300012: ButtonSpriteGelb_6
+    21300014: ButtonSpriteGelb_7
+    21300016: ButtonSpriteGelb_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 30, y: 30, z: 30, w: 30}
+  spritePixelsToUnits: 256
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ButtonSpriteGelb_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 85.33333
+        width: 42.666668
+        height: 42.666668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ButtonSpriteGelb_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 85.33333
+        width: 42.666668
+        height: 42.666668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ButtonSpriteGelb_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 85.33333
+        width: 42.666668
+        height: 42.666668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ButtonSpriteGelb_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 43.333332
+        width: 42.666668
+        height: 42.666668
+      alignment: 0
+      pivot: {x: 0.5, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ButtonSpriteGelb_4
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 43.333332
+        width: 42.666668
+        height: 42.666668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ButtonSpriteGelb_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 43.333332
+        width: 42.666668
+        height: 42.666668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ButtonSpriteGelb_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333321
+        width: 42.666668
+        height: 42.666668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ButtonSpriteGelb_7
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1.3333321
+        width: 42.666668
+        height: 42.666668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ButtonSpriteGelb_8
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1.3333321
+        width: 42.666668
+        height: 42.666668
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
