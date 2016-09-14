@@ -13,11 +13,12 @@ public class Data : MonoBehaviour {
 
     private static string[] suffix = new string[] { "", "K", "M", "B", "T", "q", "Q", "s", "S", "O", "N", "d", "D" };
 
-    public static List<Miner> minerList = new List<Miner>
+    //id,name,kosten,ppc,gps,upgradekosten,upgradepower
+    private List<Miner> minerList = new List<Miner>
     {
         new Miner(0,"Miner MK I", 10, 1,1,1.2f,1.15f),
-        new Miner(1,"Miner MK II", 100, 2,2,1.2f,1.25f),
-        new Miner(2,"Miner MK III", 10000, 100,0,1.3f,1.35f),
+        new Miner(1,"Miner MK II", 100, 3,2,1.2f,1.25f),
+        new Miner(2,"Miner MK III", 10000, 500,0,1.3f,1.35f),
     };
 
 
@@ -51,17 +52,17 @@ public class Data : MonoBehaviour {
 	public void UpdateGold () {
         goldPerClick = 1;
         goldPerSec = 0;
-        for (int i = 0; i < Data.minerList.Count; i++)
+        for (int i = 0; i < Data.instance.minerList.Count; i++)
         {
-            if (Data.minerList[i].count > 0)
+            if (Data.instance.minerList[i].count > 0)
             {
-                goldPerClick += Data.minerList[i].clickPower;
-                goldPerSec += Data.minerList[i].goldPerSec;
+                goldPerClick += Data.instance.minerList[i].clickPower;
+                goldPerSec += Data.instance.minerList[i].goldPerSec;
             }
         }
     }
 
-    public static string CurrencyToString(float valueToConvert)
+    public string CurrencyToString(float valueToConvert)
     {
         int scale = 0;
         float v = valueToConvert;
@@ -100,6 +101,10 @@ public class Data : MonoBehaviour {
     public float GetGoldPerSec()
     {
         return goldPerSec;
+    }
+    public Miner GetMiner(int i)
+    {
+        return minerList[i];
     }
 
 }
