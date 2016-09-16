@@ -12,7 +12,8 @@ public class GoldPerSec : MonoBehaviour {
     {
         while (true)
         {
-            AutoGoldPerSec();
+            MaterialDepot.Instance.TakeDamage(Data.Instance.GetGoldPerSec());
+            //AutoGoldPerSec();
             yield return new WaitForSeconds(0.1F);
         }
     }

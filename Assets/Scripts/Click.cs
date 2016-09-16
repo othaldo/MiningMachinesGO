@@ -19,7 +19,8 @@ public class Click : MonoBehaviour {
     public void Clicked()
     {
         button.interactable = false;
-        Data.instance.AddGold();
+        //Data.instance.AddGold();
+        MaterialDepot.Instance.TakeDamage(Data.Instance.GetGoldPerClick());
         StartCoroutine(Reactivate());
     }
 

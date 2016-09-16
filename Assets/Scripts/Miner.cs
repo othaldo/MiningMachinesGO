@@ -15,8 +15,7 @@ public class Miner {
     public float upgradeGPS;
     public int count = 0;
 
-    public Miner(int id, string minerName,float cost,float clickPower, float goldPerSec, float upgradecost, float upgradeGPS)
-    {
+    public Miner(int id, string minerName, float cost, float clickPower, float goldPerSec, float upgradecost, float upgradeGPS) {
         this.id = id;
         this.minerName = minerName;
         this.cost = cost;
@@ -29,13 +28,13 @@ public class Miner {
         this.upgradeGPS = upgradeGPS;
     }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Use this for initialization
+    void Start() {
+
+    }
+
+    // Update is called once per frame
+    void Update() {
+
+    }
 }
