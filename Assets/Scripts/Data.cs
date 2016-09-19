@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,6 +7,7 @@ public class Data : MonoBehaviour {
 
     public static Data instance;
 
+    //Spielerdaten
     private float gold = 0F;
     private float goldPerClick = 1F;
     private float goldPerSec = 0F;
@@ -13,6 +15,16 @@ public class Data : MonoBehaviour {
     private int level = 1;
     private int stage = 1;
     private int maxStage = 10;
+
+    //Resourceblockdaten
+    private float baseHitpoints = 10f;
+    private float hitpoints;
+    private float maxHitpoints;
+    private float defence;
+    private float amountResource;
+    private int resourceNumber;
+    private bool isBoss = false;
+
 
     private static string[] suffix = new string[] { "", "K", "M", "B", "T", "q", "Q", "s", "S", "O", "N", "d", "D", "!", "@", "#", "$", "%", "^", "&", "*", "UI" };
 
@@ -39,6 +51,17 @@ public class Data : MonoBehaviour {
             instance = this;
         }
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void Update() {
+        if (Input.GetKeyUp(KeyCode.Escape)) {
+            if (Application.platform == RuntimePlatform.Android) {
+                AndroidJavaObject activity = new AndroidJavaClass("com.unity3d.player.UnityPlayer").GetStatic<AndroidJavaObject>("currentActivity");
+                activity.Call<bool>("moveTaskToBack", true);
+            } else {
+                Application.Quit();
+            }
+        }
     }
 
     public void AddGold() {
@@ -110,4 +133,73 @@ public class Data : MonoBehaviour {
         set { maxStage = value; }
     }
 
+    public float BaseHitpoints {
+        get {
+            return baseHitpoints;
+        }
+
+        set {
+            baseHitpoints = value;
+        }
+    }
+
+    public float Hitpoints {
+        get {
+            return hitpoints;
+        }
+
+        set {
+            hitpoints = value;
+        }
+    }
+
+    public float MaxHitpoints {
+        get {
+            return maxHitpoints;
+        }
+
+        set {
+            maxHitpoints = value;
+        }
+    }
+
+    public float Defence {
+        get {
+            return defence;
+        }
+
+        set {
+            defence = value;
+        }
+    }
+
+    public float AmountResource {
+        get {
+            return amountResource;
+        }
+
+        set {
+            amountResource = value;
+        }
+    }
+
+    public int ResourceNumber {
+        get {
+            return resourceNumber;
+        }
+
+        set {
+            resourceNumber = value;
+        }
+    }
+
+    public bool IsBoss {
+        get {
+            return isBoss;
+        }
+
+        set {
+            isBoss = value;
+        }
+    }
 }

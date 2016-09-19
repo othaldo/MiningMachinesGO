@@ -5,29 +5,19 @@ using UnityEngine.UI;
 
 public class MaterialDepot : MonoBehaviour {
 
-    public static MaterialDepot instance;
-
-    private float baseHitpoints = 10f;
-    private float hitpoints;
-    private float maxHitpoints;
-    private float defence;
-    private float amountResource;
-
-    private int resourceNumber;
-
-    private bool isBoss = false;
-
     //UnityEngine.UI.Image image;
     public Slider slider;
     public UnityEngine.UI.Text sliderLabel;
 
+    public static MaterialDepot instance;
     public static MaterialDepot Instance {
         get { return instance; }
     }
 
     public void TakeDamage(float damage) {
-        hitpoints -= damage;
-        if (hitpoints <= 0) {
+        Debug.Log(""+damage);
+        Data.Instance.Hitpoints -= damage;
+        if (Data.Instance.Hitpoints <= 0) {
             Die();
             Respawn();
         }
@@ -35,15 +25,13 @@ public class MaterialDepot : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        CalculateHitpoints();
-        CalculateResourceAmount();
-        maxHitpoints = hitpoints;
+        
     }
 
     // Update is called once per frame
     void Update() {
-        slider.value =  hitpoints / maxHitpoints * 100f;
-        sliderLabel.text = Data.Instance.CurrencyToString(hitpoints);
+        MaterialDepot.Instance.slider.value =  Data.Instance.Hitpoints / Data.Instance.MaxHitpoints * 100f;
+        MaterialDepot.Instance.sliderLabel.text = Data.Instance.CurrencyToString(Data.Instance.Hitpoints) +" HP";
     }
 
     void Awake() {
@@ -57,16 +45,16 @@ public class MaterialDepot : MonoBehaviour {
     }
 
     private void Die() {
-        Data.Instance.AddGold(amountResource);
+        Data.Instance.AddGold(Data.Instance.AmountResource);
 
-        if (isBoss) {
-            isBoss = false;
+        if (Data.Instance.IsBoss) {
+            Data.Instance.IsBoss = false;
             Data.Instance.Level += 1;
             Data.Instance.Stage = 1;
             Data.Instance.MaxStage = 10;
         } else {
             if (Data.Instance.Level % 10 == 9 && Data.Instance.Stage == Data.Instance.MaxStage) {
-                isBoss = true;
+                Data.Instance.IsBoss = true;
                 Data.Instance.Stage = 1;
                 Data.Instance.MaxStage = 1;
                 Data.Instance.Level += 1;
@@ -85,19 +73,16 @@ public class MaterialDepot : MonoBehaviour {
         CalculateResourceAmount();
     }
 
-    //Round Up(MAX([Is Boss] * 10, 1) * [Base Life]  * (1.6 ^ ([Level] - 1)) + ([Level] - 1) * 10, 0)
     private void CalculateHitpoints() {
-        if (isBoss) {
-            //Round Up(([Base Life] * (1.6 ^ ([Level] - 1)) + (Level - 1) * 10) * 10)
-            //100 * (1.6 ^ ([Level] - 1)) + ([Level] - 1) * 10
-            hitpoints = Math.Max(Convert.ToSingle(Math.Round(baseHitpoints * 10 *(Math.Pow((Data.Instance.Level - 1), 1.6) + (Data.Instance.Level - 1)))), 10);
+        if (Data.Instance.IsBoss) {
+            Data.Instance.Hitpoints = Math.Max(Convert.ToSingle(Math.Round(Data.Instance.BaseHitpoints * 10 *(Math.Pow((Data.Instance.Level - 1), 1.6) + (Data.Instance.Level - 1)))), 10);
         } else {
-            hitpoints = Math.Max(Convert.ToSingle(Math.Round(baseHitpoints * (Math.Pow((Data.Instance.Level - 1), 1.6)))),10);
+            Data.Instance.Hitpoints = Math.Max(Convert.ToSingle(Math.Round(Data.Instance.BaseHitpoints * (Math.Pow((Data.Instance.Level - 1), 1.6)))),10);
         }
-        maxHitpoints = hitpoints;
+        Data.Instance.MaxHitpoints = Data.Instance.Hitpoints;
     }
 
     private void CalculateResourceAmount() {
-        amountResource = Math.Max(hitpoints / 15,1);
+        Data.Instance.AmountResource = Math.Max(Data.Instance.Hitpoints / 15,1);
     }
 }

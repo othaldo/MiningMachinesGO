@@ -11,11 +11,11 @@ public class GoldPerSec : MonoBehaviour {
     IEnumerator AutoTick()
     {
         while (true)
-        {
-            MaterialDepot.Instance.TakeDamage(Data.Instance.GetGoldPerSec());
-            //AutoGoldPerSec();
+        {   
+            MaterialDepot.Instance.TakeDamage(Data.Instance.GetGoldPerSec() / 10);
             yield return new WaitForSeconds(0.1F);
         }
+
     }
 	// Use this for initialization
 	void Start () {
